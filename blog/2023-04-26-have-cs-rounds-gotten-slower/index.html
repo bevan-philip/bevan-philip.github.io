@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+    <link rel="preload" as="image" href="img/just-waves.webp" type="image/webp">
+    <link rel="preload" as="image" href="img/just-waves-trans.webp" type="image/webp">
+    
+
+    
+    <title>Have CS rounds gotten slower? | Bevan Philip</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+
+
+    <link rel="stylesheet" href="/styles.min.b0ea43f519d837925ff15c4d1e0f98dd1162cb9457abdf30ebb8c776c049280e.css" crossorigin="anonymous" integrity="">
+
+    <script src="/main.min.b52a2107955ee5c7a8a3516d3c5cd37a6b4172ef37e15be4641e2659fcb4ae32.js"  integrity="sha256-tSohB5Ve5ceoo1FtPFzTemtBcu834VvkZB4mWfy0rjI="></script>
+</head>
+<body class="flex flex-col min-h-screen inter overflow-x-hidden dark:bg-gray-800 dark:text-white">
+    <header class="flex items-center justify-between flex-wrap p-2 mb-2 mt-2">
+        <div class="flex flex-grow pl-6">
+            <a class="font-bold lg:text-4xl tracking-tight text-xl just-waves" href="/">
+                
+                <span class="dark:bg-gray-700 dark:bg-opacity-75 px-4 bg-white bg-opacity-75" style="font-weight: 900">BEVAN</span>
+            </a>
+        </div>
+        <div class="block lg:hidden" style="margin-right: 25px;">
+            <button
+                class="flex items-center px-3 py-2 rounded border border-gray-600 active:border-black text-black dark:text-white" id="nav-toggle">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div> 
+    </header>
+    <nav class="flex justify-between flex-wrap pl-6 lg:px-10 inter">
+        <div class="w-full block lg:flex-grow lg:items-center lg:justify-left lg:flex lg:w-auto lg:visible hidden lg:h-auto" id="nav-options">
+            <div class="text-base">
+                <a href="https://bphilip.uk/" class="button-blue mr-4">Home</a>
+                
+                <a href="https://bphilip.uk/blog/" class="button-blue mr-4">
+                    Blog
+                </a>
+                
+                <a href="https://bphilip.uk/projects/" class="button-blue mr-4">
+                    Projects
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="w-full block lg:flex-grow lg:justify-end lg:flex lg:w-auto lg:visible hidden lg:h-auto" id="nav-options">
+            <div class="text-2xl">
+                
+                <a href="http://github.com/bevan-philip" class="button-teal mr-4" title="github">
+                    <span class="inline-svg" title="github"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/bevan-philip-032182196/" class="button-teal mr-4" title="linkedin">
+                    <span class="inline-svg" title="linkedin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span>
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="just-waves block mt-3 inter">
+        <div class="container mx-auto py-3 dark:bg-gray-700 dark:bg-opacity-75 px-4 bg-white bg-opacity-75">
+            
+    <h1 class="font-extrabold text-5xl mt-2 underline"> Have CS rounds gotten slower? </h1>
+
+        </div>
+    </div>
+    
+    
+    <nav aria-label="Breadcrumb" class="breadcrumb container mx-auto py-3 mt-2">
+        <ul>
+            <a href="/">
+                <li class="descriptor-clickable breadcrumb-element">Home</li>
+            </a>
+            <a href="/blog/">
+                <li class="descriptor-clickable breadcrumb-element">Blog</li>
+            </a>
+            <li class="descriptor">Have CS rounds gotten slower? </li>
+        </ul> 
+    </nav>
+    
+
+    <main class="w-screen flex-grow container mx-auto mt-3 mb-5">
+        
+  <div class="prose dark:prose-invert w-full min-w-[75%] gap-4 rounded shadow-md bg-gray-300 bg-opacity-25 dark:shadow-xl dark:bg-gray-700 dark:bg-opacity-50 p-5 min-h-0 mx-auto mt-4">
+    <p>Counter-Strike events seem to have less energy than ever. There are no concrete statistics to back this up, but the symphonies of Counter-Strike sound more like a small chorale. The crowds have gone from ecstasy, to gentle applause.</p>
+<p>If this is the case, pointing to a single cause is difficult. To list a few changes:</p>
+<ul>
+<li>The makeup of teams has changed, with fan favourites such as NiP, SK and fnatic having all disappeared from the high levels of the scene.</li>
+<li>The local scene had one representative at the top in Virtus.Pro, who have now also disbanded, leaving the Polish crowd little home grown to cheer for.</li>
+<li>COVID might have caused more churn, especially as esports stopped playing offline events and became online only.</li>
+<li>Competition in the tactical FPS market has grown, and as such, the CS audience might have diminished in size.</li>
+<li>Partner teams for big tournaments have reduced the overall quality of competition</li>
+</ul>
+<p>But the way in which the game is played has also changed. Like in running, the equipment available to players has become lighter and more precise than ever. Like in Formula 1, there is an incomprehensible amount of data, with numerous statistical analysis tools to digest it. Like in football, the metagame has evolved, despite the rules of the game being nearly identical.</p>
+<p>Players have learned how to utilize every facet the game has to offer, from grenade timings to elaborate setups for precise smoke placement. The days when smokes were thrown ad-hoc have all but disappeared.</p>
+<p>I want to try and explore some of the ways in which the game has evolved that might have made it less interesting for audiences.</p>
+<h2 id="what-is-interesting">What is <em>interesting</em>?</h2>
+<p>There is no central statistic that can be used to describe what interesting means.</p>
+<p>Interesting to some might be the level of competition, and the number of top teams that exist. Interesting to others might be the way that the mechanics of top players, such as the way in which they aim and throw utility.</p>
+<p>What might give us insight is understanding how individual rounds have changed across the years. If we can point to specific changes in the makeup of a round, we can start to understand ways that viewers might have lost interest.</p>
+<h2 id="analysis">Analysis</h2>
+<p>I took demos from all of the CS:GO majors from Katowice 2014, to Rio 2022. Additionally, I included Katowice 2023 to add some 2023 datapoints.</p>
+<p>Caveats:</p>
+<ul>
+<li>As much as I’ve tried to ensure data quality, this is not a thoroughly tested ingestion pipeline. There may be factual errors. Some demos were removed as they broke the ingestion, but this was minimal.</li>
+<li>Similarly, I’m a relative noob to Pandas,  so the data analysis might be flawed.</li>
+</ul>
+<p>Nonetheless, the conclusions roughly point to what is observable, so my concerns are low on there being systemic issues.</p>
+<h3 id="rounds-are-longer-on-average">Rounds are longer on average</h3>
+<p>The average round duration grew from 78 seconds to 95 seconds. Strictly speaking, this isn’t a drastic change, even when compounded over a 30 round game (roughly an additional 8.5 minutes).</p>
+<p><img src="/img/cs-analysis/cs-duration.png" alt=""></p>
+<h3 id="and-saving-is-more-prevalent-than-ever">And saving is more prevalent than ever</h3>
+<p>Given that a team loses a round, a growth from 0.16 players saving per round to 0.54 players can be observed.</p>
+<p><img src="/img/cs-analysis/cs-survivingcount.png" alt=""></p>
+<p>But the growth is even more drastic when you separate for sides. CT sides, when they know they&rsquo;re losing a round, on average save nearly a player each time.</p>
+<p><img src="/img/cs-analysis/cs-savingcountsplit.png" alt=""></p>
+<h3 id="kills-are-spaced-further-out">Kills are spaced further out</h3>
+<p>The longest wait between kills went from a low of 19 seconds in 2015, to peaking at 27 seconds in 2021. It currently averages at 25 seconds.</p>
+<p><img src="/img/cs-analysis/cs-longestkillwaits.png" alt=""></p>
+<h3 id="and-take-place-later-on-in-the-round">And take place later on in the round</h3>
+<p><img src="/img/cs-analysis/cs-killticksrelative.png" alt=""></p>
+<h3 id="the-last-kill-to-the-end-of-the-round-takes-longer">The last kill to the end of the round takes longer</h3>
+<p>Previously, when the last kill in a round took place, it took an average of 3 seconds for the round to conclude. This has increased to 10 seconds.</p>
+<p><img src="/img/cs-analysis/cs-lastkilltoends.png" alt=""></p>
+<h3 id="nades-are-pretty-static">Nades are pretty static</h3>
+<p>Players are far more effective with their nades, averaging 13 points more damage.</p>
+<p>They’re thrown at virtually the same point in a round. Smokes too, are thrown at virtually the same, moving between 33 and 38 seconds in a round (this does not cleanly go up, unlike the other statistics).</p>
+<p>Molotovs are the notable exception, from being thrown at 41 seconds in a round to a low of 29 in 2022.</p>
+<p><img src="/img/cs-analysis/cs-relativenades.png" alt=""></p>
+<h3 id="whorsquos-saved-the-most">Who’s saved the most?</h3>
+<p>If we take a look at the players whose teams have saved the most, the most of the top 5 make sense. dupreeh has attended the most majors, and s1mple, olofmeister and Zeus are all players who have made the grand finals multiple times.</p>
+<p>But exceptionally, Jame tops the charts, crushing the competition.</p>
+<h4 id="players-whose-teams-have-saved-the-most">Players, whose teams have saved the most</h4>
+<table>
+<thead>
+<tr>
+<th>Player</th>
+<th>Rounds their team have saved</th>
+<th>Maps played</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jame, qikert</td>
+<td>289</td>
+<td>60</td>
+</tr>
+<tr>
+<td>dupreeh</td>
+<td>257</td>
+<td>121</td>
+</tr>
+<tr>
+<td>s1mple</td>
+<td>228</td>
+<td>85</td>
+</tr>
+<tr>
+<td>olofmeister</td>
+<td>216</td>
+<td>109</td>
+</tr>
+<tr>
+<td>Zeus</td>
+<td>212</td>
+<td>89</td>
+</tr>
+</tbody>
+</table>
+<p>Dividing by the number of appearances they make in the data set, we can determine what players save most per game. Filtering to a minimum of 20 appearances (to prevent outliers making an appearance), the data continues to show the trend observed - newer players tend to save more, and the Outsiders players are outlier.</p>
+<h4 id="a-scatter-graph-showing-the-ratio-of-rounds-saved-to-appearances-against-the-average-date-of-their-matches">A scatter graph, showing the ratio of rounds saved to appearances against the average date of their matches</h4>
+
+ 
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="/embed/savingCountVsAvgDate.html" height="525" width="100%" loading="lazy"></iframe>
+
+<p>It takes until 2019 for a player to reach a ratio of 1.5. After that, you have 11 players breach that boundary, with Jame almost reaching a ratio of 3. They aren&rsquo;t outliers.</p>
+<h4 id="a-scatter-graph-showing-the-ratio-of-rounds-saved-to-appearances-against-the-first-date-of-their-matches">A scatter graph, showing the ratio of rounds saved to appearances against the first date of their matches</h4>
+
+ 
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="/embed/savingCountVsFirstDate.html" height="325" width="100%" loading="lazy"></iframe>
+
+<p>This graph I find less useful, as you don&rsquo;t get a sense of what era a player has primarily played within. For instance, cadiaN is at the start of this graph, but the majority of contributions take place at the other end.</p>
+<h3 id="they-tend-to-take-longer-to-lose">They tend to take longer to lose</h3>
+<p>We can also look at how long players&rsquo; teams take to lose rounds.  Once again, the new school of Counter-Strike takes longer to lose, and once again, Outsiders are outliers.</p>
+<h4 id="a-scatter-graph-showing-length-of-time-for-a-players-team-to-lose-a-round-against-the-average-date-of-their-matches">A scatter graph, showing length of time for a players&rsquo; team to lose a round against the average date of their matches</h4>
+
+ 
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="/embed/roundDurationVsAvgDate.html" height="525" width="100%" loading="lazy"></iframe>
+
+<h4 id="a-scatter-graph-showing-length-of-time-for-a-players-team-to-lose-a-round-against-the-first-date-of-their-matches">A scatter graph, showing length of time for a players&rsquo; team to lose a round against the first date of their matches</h4>
+
+ 
+<iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="/embed/roundDurationVsFirstGameDate.html" height="325" width="100%" loading="lazy"></iframe>
+
+<p>Similar comment to the above start date graph.</p>
+<h3 id="what-does-this-show-us">What does this show us?</h3>
+<p>Rounds take longer, and players save more. The meta shift has been expressed in full by the current generation of players. Arguably, this demonstrates more conservative playing habits - they&rsquo;re far less likely to take round defining risks.</p>
+<p>None of this is a surprise. The concrete statistics do help us visualize what the change looks like.</p>
+<h2 id="a-dance-of-interests">A dance of interests</h2>
+<p>Within any sport, there is a balancing act between providing entertainment value, and providing an avenue for the very best of us to exhibit their otherworldly skills.</p>
+<p>It is not that those things aren’t linked. We watch football because we want to see what the most capable, the most gifted, and the hardest working human beings can achieve against each other within the confines of the game. We watch knowing that if we were to be on that pitch, we would be outclassed. The best managers instrument the orchestra of moves that lead to a goal.</p>
+<p>Yet despite “parking the bus” sometimes being the prudent tactical move, it is widely derided as uninteresting and boring. The very best are executing the ideal strategy, but the outcome causes us to switch off.</p>
+<p>Many consider Virtus.Pro to CS’ equivalent to parking the bus. Slow, methodical, and incredibly effective - but not interesting to watch. Bystanders might fear the effectiveness of this playbook as infecting the rest of the scene, but VP’s failure to qualify for Paris might dissuade others.</p>
+<h2 id="are-people-turning-away">Are people turning away?</h2>
+<p>Whether this has any impact on Counter-Strike is difficult to ascertain.</p>
+<p>Viewership in total has grown, breaking new heights every year. But viewership for English language streams appears to have stagnated  since 2017/2018. Atlanta 2018 enjoyed 1.1m concurrent viewers <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, while 2021’s PGL Stockholm enjoyed 954,000 concurrent viewers on the English stream <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<p>Whether this is a symptom of changing demographics, better quality regional products (one only needs to see the popularity of Gaules), or some other factor, it is impossible to rule out. However, I can tell you that Counter-Strike is a less compelling entertainment product for me, and I&rsquo;m not sure I&rsquo;m alone.</p>
+<h2 id="can-you-change-the-metagame">Can you change the metagame?</h2>
+<p>Meddling with the game always leads to unintended consequences, but we can look at some ways to shift the playstyle.</p>
+<p>Counter-Strike 2 presents a couple of quick solutions. Smoke grenades can be dispersed by grenades, which adds another level of tactical depth that changes how both of those pieces of utility will be used. Smokes will be less effective, and grenades will be less used for inflicting damage. At the moment, the hitboxes appear to be larger, which could incentivize more aim heavy playstyles as the margin for error drops. Of course, this reduces the skill ceiling.</p>
+<p>Timings could always be changed. In 2015, Valve extended the round timer in competitive play to align with matchmaking. While this was not popular at the time, in retrospect, modern CS would be unplayable with even less time allocated to teams - molotovs and smokes would be more powerful, and teams would pull the plug earlier. But smokes and molotov timings can be modified - making them shorter would reduce the impact they have on the round.</p>
+<p>Monetary incentives for not saving would spur teams into making riskier plays, as the risk/reward balance would shift. Disincentives for saving would also have an effect.</p>
+<h2 id="a-conclusion">A conclusion</h2>
+<p>There is no right solution. Counter-Strike 2 gives us enough rope that the best option is to wait and see what it brings. The novelty of the game, despite the closeness to Global Offensive, should bring about a shift in the gameplay. At the time of publishing, Valve have hinted that there is even more to be revealed.</p>
+<p>CS2 could end down the same pathway, however. Should it do so, the time has come to evaluate whether aspects of the core gameplay loop need tweaking to promote more exciting gameplay.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://archive.is/https://esportsobserver.com/eleague-boston-major-viewership-record">https://archive.is/https://esportsobserver.com/eleague-boston-major-viewership-record</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.hltv.org/news/32764/pgl-major-stockholm-breaks-records-with-over-27-million-concurrent-viewers">https://www.hltv.org/news/32764/pgl-major-stockholm-breaks-records-with-over-27-million-concurrent-viewers</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    
+  <div class="mb-4">
+      <span class="align-fa">
+        <span class="inline-svg" title="tag-solid"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="currentColor" opacity="1" fill="#1E3050" d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+</span>
+      </span>
+        <a href="/tags/counter-strike/"><span class="descriptor-clickable"> Counter-Strike</span></a>
+        <a href="/tags/video-games/"><span class="descriptor-clickable"> video games</span></a>
+        <a href="/tags/statistical-analysis/"><span class="descriptor-clickable"> statistical analysis</span></a>
+  </div>
+
+  </div>
+
+    </main>
+  
+    <footer class="container mx-auto mt-3 mb-5">
+    <p>Copyright Bevan Philip. All rights reserved. See <a href="/credits" class="link-style">Credits</a> for a list of credits.</p>
+
+  </footer>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+    <link rel="preload" as="image" href="img/just-waves.webp" type="image/webp">
+    <link rel="preload" as="image" href="img/just-waves-trans.webp" type="image/webp">
+    
+
+    
+    <title>COVID-19, a prologue | Bevan Philip</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+
+
+    <link rel="stylesheet" href="/styles.min.b0ea43f519d837925ff15c4d1e0f98dd1162cb9457abdf30ebb8c776c049280e.css" crossorigin="anonymous" integrity="">
+
+    <script src="/main.min.b52a2107955ee5c7a8a3516d3c5cd37a6b4172ef37e15be4641e2659fcb4ae32.js"  integrity="sha256-tSohB5Ve5ceoo1FtPFzTemtBcu834VvkZB4mWfy0rjI="></script>
+</head>
+<body class="flex flex-col min-h-screen inter overflow-x-hidden dark:bg-gray-800 dark:text-white">
+    <header class="flex items-center justify-between flex-wrap p-2 mb-2 mt-2">
+        <div class="flex flex-grow pl-6">
+            <a class="font-bold lg:text-4xl tracking-tight text-xl just-waves" href="/">
+                
+                <span class="dark:bg-gray-700 dark:bg-opacity-75 px-4 bg-white bg-opacity-75" style="font-weight: 900">BEVAN</span>
+            </a>
+        </div>
+        <div class="block lg:hidden" style="margin-right: 25px;">
+            <button
+                class="flex items-center px-3 py-2 rounded border border-gray-600 active:border-black text-black dark:text-white" id="nav-toggle">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div> 
+    </header>
+    <nav class="flex justify-between flex-wrap pl-6 lg:px-10 inter">
+        <div class="w-full block lg:flex-grow lg:items-center lg:justify-left lg:flex lg:w-auto lg:visible hidden lg:h-auto" id="nav-options">
+            <div class="text-base">
+                <a href="https://bphilip.uk/" class="button-blue mr-4">Home</a>
+                
+                <a href="https://bphilip.uk/blog/" class="button-blue mr-4">
+                    Blog
+                </a>
+                
+                <a href="https://bphilip.uk/projects/" class="button-blue mr-4">
+                    Projects
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="w-full block lg:flex-grow lg:justify-end lg:flex lg:w-auto lg:visible hidden lg:h-auto" id="nav-options">
+            <div class="text-2xl">
+                
+                <a href="http://github.com/bevan-philip" class="button-teal mr-4" title="github">
+                    <span class="inline-svg" title="github"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/bevan-philip-032182196/" class="button-teal mr-4" title="linkedin">
+                    <span class="inline-svg" title="linkedin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span>
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="just-waves block mt-3 inter">
+        <div class="container mx-auto py-3 dark:bg-gray-700 dark:bg-opacity-75 px-4 bg-white bg-opacity-75">
+            
+    <h1 class="font-extrabold text-5xl mt-2 underline"> COVID-19, a prologue </h1>
+
+        </div>
+    </div>
+    
+    
+    <nav aria-label="Breadcrumb" class="breadcrumb container mx-auto py-3 mt-2">
+        <ul>
+            <a href="/">
+                <li class="descriptor-clickable breadcrumb-element">Home</li>
+            </a>
+            <a href="/blog/">
+                <li class="descriptor-clickable breadcrumb-element">Blog</li>
+            </a>
+            <li class="descriptor">COVID-19, a prologue </li>
+        </ul> 
+    </nav>
+    
+
+    <main class="w-screen flex-grow container mx-auto mt-3 mb-5">
+        
+  <div class="prose dark:prose-invert w-full min-w-[75%] gap-4 rounded shadow-md bg-gray-300 bg-opacity-25 dark:shadow-xl dark:bg-gray-700 dark:bg-opacity-50 p-5 min-h-0 mx-auto mt-4">
+    <p>Originally written on 2021-04-15, re-written in 2023.</p>
+<p>Special thanks to Loughborough University&rsquo;s excellent public record of emails. While they are now gone, they were instrumental in writing this piece.</p>
+<h2 id="february">February</h2>
+<p>At this point, the news reporting had started to become common place, but was still just a mild curiosity to most of us.</p>
+<p>The 2009-2010 Swine flu epidemic, and Ebola reporting, had impacted the way I perceived media around disease outbreaks. Reporting in this area had a tendency sensationalized (especially in America). Any new outbreak would blow over, just like the previous ones that.</p>
+<p>Indeed, that month we would put down a deposit for a house for the next year of University. While it seems slightly crazy, knowing what was about to hit us, it was a good decision. We would not be around for the next months to look at houses, and we would be required to return to campus the next year. Staying in halls during that time would have been far worse.</p>
+<h2 id="march">March</h2>
+<p>Early March should have been when the alarm bells started ringing, but only with the gift of hindsight can I say that.</p>
+<p>The starting weekend of March, I went home and back to university on a train. On the 6th of March, we all went as a group to a pub. We had a running joke that we&rsquo;d always make plans to go, but never execute on them right up until the end of the year - going to the club that was located on Campus was a much easier trip, as opposed to the 40 minute walk to town.</p>
+<p>Thank goodness we&rsquo;d had the foresight to do so this time.</p>
+<blockquote>
+<p>Update to staff and students - 7 March at 2pm</p>
+<p>Dear colleagues and students,</p>
+<p>I have been advised today that a student based on our Loughborough campus has contracted Coronavirus.</p>
+</blockquote>
+<p>Suddenly the distance didn&rsquo;t seem so small.</p>
+<p>Three days later, Italy would enter a nationwide lockdown.</p>
+<p>In the UK, life continued on. As we pursued herd immunity, nothing was closed yet. However, you couldn&rsquo;t ignore it. Signs from the Government were being plastered everywhere, warning people to be vigilant.</p>
+<p>Some memories from this time come to mind.</p>
+<p>One was being in a crowded corridor, waiting for a meeting. With what we know now, this was insanity. But the advice given was not to avoid being the presence of others, but to avoid physical contacts. Me and a friend were mocking the advice given, employing the two new techniques suggested: distanced high fives, or elbowing each other. Now we know that avoiding hand shaking does very little for COVID, this would have been thought of as parody, but alas, we were not.</p>
+<p>Another was a dinner table discussion about COVID. With such certainty, did I evoke the sentiment that &ldquo;this too shall pass&rdquo;. Swine flu had taught us nothing!</p>
+<p>By the end of the month, all of us had returned to our homes.</p>
+<blockquote>
+<p>Update to students - 11 March at 6pm</p>
+<p>Dear Students</p>
+<p>In his message on Monday the Vice-Chancellor promised we would keep you informed of the situation on campus with regard to Coronavirus (COVID-19). I am therefore writing with an update.</p>
+<p>I can restate that we still have just the single confirmed case associated with the University, notified to you on Saturday. The individual remains away from Loughborough and continues to do well.</p>
+<p>At present the University is still operating as normal and you should continue to attend classes, lab sessions etc as usual. If you feel you are not able to continue attending, you must notify your academic School. If you are studying on a Tier 4 visa we will write to you tomorrow (Thursday) with more detailed guidance.</p>
+</blockquote>
+<blockquote>
+<p>Update to staff - 12 March at 9am</p>
+<p>Dear Colleagues</p>
+<p>I wanted to let you know that the Vice-Chancellor will write to you this afternoon announcing some changes in the way we are responding to Coronavirus (Covid-19). The University has developed a plan that escalates as the national position changes, and the Vice-Chancellor&rsquo;s message will outline these. Please can you look out for this email and read it carefully. For clarity and to prevent rumour &ndash; it will <strong>not announce a closure of the University</strong>, but will detail important escalating actions, including some changes to teaching activity.</p>
+</blockquote>
+<p>This would be one of the most shortlived announcements of the month.</p>
+<blockquote>
+<p>Prime Minister&rsquo;s statement on coronavirus (COVID-19): 12 March 2020 (around 6pm GMT)</p>
+</blockquote>
+<blockquote>
+<p>Good afternoon everybody and thank you very much for coming.</p>
+<p>I&rsquo;ve just chaired a meeting of the government&rsquo;s emergency committee including ministers from Scotland, Wales and Northern Ireland.</p>
+<p>And it&rsquo;s clear that coronavirus, COVID-19, continues and will continue to spread across the world and our country over the next few months. We&rsquo;ve done what can be done to contain this disease and this has bought us valuable time.</p>
+</blockquote>
+<blockquote>
+<p>Update to students - 12 March at 6.45pm</p>
+<p>Dear Students,</p>
+<p>I am writing to you to outline significant changes in our approach to Coronavirus. The UK Government has this afternoon announced that it is moving from the &lsquo;Containment&rsquo; to the &lsquo;Delay&rsquo; phase of its planned response to Coronavirus (COVID-19).</p>
+<p>[&hellip;]</p>
+<p>Teaching will continue as normal until close of play tomorrow, Friday 13th March. <strong>From Monday 16th March we shall suspend &rsquo;normal&rsquo; lecturing activity</strong>. By this we mean a learning activity led by an individual member of staff presenting to a group of students in a lecture theatre setting. We have asked academic colleagues to make best efforts to ensure that instead, lecture material is online within 24 hours of the scheduled session and made available through Learn in the normal way. There will still be opportunities for you to ask teaching staff questions.</p>
+</blockquote>
+<p>Within the span of 24 hours, the position of the university had changed from &ldquo;everything is mostly normal&rdquo;, to the closure of teaching. You know, the main point of a university campus.</p>
+<p>I went to our final scheduled lecture, and it was vacant.</p>
+<p>The mood quickly changed. This was the announcement that caused most to evaluate whether they should stay on a university campus with no lectures. Most chose not to.</p>
+<p>For those of us that did stay, the situation kept evolving, day by day. On the 13th of March, halls announced that deep cleaning was underway, and large functions were cancelled. Catered halls kept running dinner services, as normal.</p>
+<p>That next week saw a small unit of us continue to reside, occupying the corner of a floor. As bleary as the world outside seemed, this was a small pocket of joy. No teaching activity was happening, so this was effectively a mini-holiday.</p>
+<p><img src="/img/misc-blog/covid-door.png" alt="">
+(18th March 2020)</p>
+<p>Dinner together kept evolving: first it was the introduction of disposable cutlery, followed by spaced out seating.</p>
+<blockquote>
+<p>Update to students - 16 March at 7.30pm</p>
+<p>Dear Students</p>
+<p>I want to start by thanking all students for the understanding shown in response to the difficult situation of the last few days. I am personally hugely appreciative of this.</p>
+<p>As you may be aware the Government have announced daily briefings regarding the country&rsquo;s COVID-19 response, the first of which was today.</p>
+<p>The University&rsquo;s COVID-19 response group has met this evening to absorb the details of today&rsquo;s Government briefing. More detail will follow tomorrow, but we have decided to communicate early and escalate our response in accordance with our pre-prepared plan. The key points are:</p>
+<p>Any face to face classes, labs, seminars or tutorials scheduled for tomorrow (Tuesday) will not go ahead and all of these activities are suspended until further notice. Details of the online replacement activity and any access to facilities will follow tomorrow. Students should leave the campus if they wish to do so. Our halls of residence will remain open and function as close to normal as possible. We know many of our students are unable to leave or may have an important reason to stay until the end of term. This is a personal decision but leaving now for the approaching vacation will incur no penalty.</p>
+</blockquote>
+<p>This was the first communication to students that they could leave campus. People had already left ahead of this, but now it was getting realer.</p>
+<p>Around this time, I went to a GP for a mild skin condition.</p>
+<p>The walk around campus was eerier. A Sunday during term-time should not be empty.</p>
+<p>Getting into the GP involved COVID pre-screening checks. How quaint this was.</p>
+<p>The GP gave me a product recommendation, that I had to get from a pharmacist. I ventured over to the on-campus one. The signs outside proclaimed a lack of masks, thermometers or cold and flu medicine. As I entered the door, I was immediately accosted: We don&rsquo;t have any masks. It feels as if I was the only person that day not looking for anything COVID related.</p>
+<blockquote>
+<p>Update to staff and students - 19 March at 11.15am</p>
+<p>Dear Colleagues and Students,</p>
+<p>The Government announced yesterday further measures to minimise the risk of coronavirus in the UK, including the closure of schools from tomorrow afternoon until further notice. To reflect current concern, from 1700 tomorrow the University will move to a minimum level of campus operation.</p>
+<p>[&hellip;]</p>
+<p>It is likely that significant temporary restrictions on the movement of people may be issued by the Government shortly. If you are still resident in Loughborough and this is not your permanent home you should now think very carefully about whether staying here is in your best interests. My <strong>strong advice is that you should return home while you still have the flexibility to do so</strong>. If you cannot get home, my colleagues and I shall continue to do our very best to support you.</p>
+</blockquote>
+<p>When I got back home, I took a picture of the corridor outside my room, and the view out of the window. I knew we weren&rsquo;t coming back.</p>
+<p><img src="/img/misc-blog/covid-outside.png" alt="">
+On the 20th of March, I left my room in halls.</p>
+<blockquote>
+<p>Prime Minister&rsquo;s statement on coronavirus (COVID-19): 23 March 2020</p>
+<p>Good Evening,</p>
+<p>The coronavirus is the biggest threat this country has faced for decades &ndash; and this country is not alone.</p>
+<p>All over the world we are seeing the devastating impact of this invisible killer.</p>
+<p>[&hellip;]</p>
+<p>From this evening I must give the British people a very simple instruction - you <strong>must stay at home</strong>.</p>
+</blockquote>
+
+    
+
+  </div>
+
+    </main>
+  
+    <footer class="container mx-auto mt-3 mb-5">
+    <p>Copyright Bevan Philip. All rights reserved. See <a href="/credits" class="link-style">Credits</a> for a list of credits.</p>
+
+  </footer>
+</body>
+</html>

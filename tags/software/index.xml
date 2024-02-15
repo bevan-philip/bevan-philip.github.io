@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bevan Philip</title>
+    <link>https://bphilip.uk/tags/software/</link>
+    <description>Recent content Bevan Philip</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 06 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://bphilip.uk/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Simple Phone should have rung alarm bells to Simple Mobile Tools&#39; future</title>
+      <link>https://bphilip.uk/blog/2023-12-06-simple-phone-should-have-rung-alarm-bells/</link>
+      <pubDate>Wed, 06 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://bphilip.uk/blog/2023-12-06-simple-phone-should-have-rung-alarm-bells/</guid>
+      <description>Simple Mobile Tools are a set of open-source &amp;ldquo;shareware&amp;rdquo; apps. Examples of applications included in the suite include &amp;ldquo;Simple Gallery&amp;rdquo;, &amp;ldquo;Simple Calendar&amp;rdquo; and &amp;ldquo;Simple Contacts&amp;rdquo;.
+While the applications are open-source, the developer made money through proprietary app stores versions. From the Play Store, the Gallery is only free for 14 days, before you are required to buy a license. F-Droid and GitHub were options for acquiring fully-free binaries, but not often used by regular users.</description>
+    </item>
+  </channel>
+</rss>
