@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0">
+    <link rel="preload" as="image" href="img/just-waves.webp" type="image/webp">
+    <link rel="preload" as="image" href="img/just-waves-trans.webp" type="image/webp">
+    
+
+    
+    <title>Kernel-level anti-cheats: a necessary devil | Bevan Philip</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+
+
+    <link rel="stylesheet" href="/styles.min.87ded9e9df210c2bf4d823b13e0887cc8c62c70c0ce0e396cea6bd2a06ac6dd2.css" crossorigin="anonymous" integrity="">
+
+    <script src="/main.min.b52a2107955ee5c7a8a3516d3c5cd37a6b4172ef37e15be4641e2659fcb4ae32.js"  integrity="sha256-tSohB5Ve5ceoo1FtPFzTemtBcu834VvkZB4mWfy0rjI="></script>
+</head>
+<body class="flex flex-col min-h-screen inter overflow-x-hidden dark:bg-gray-800 dark:text-white">
+    <header class="flex items-center justify-between flex-wrap p-2 mb-2 mt-2">
+        <div class="flex flex-grow pl-6">
+            <a class="font-bold lg:text-4xl tracking-tight text-xl just-waves" href="/">
+                
+                <span class="dark:bg-gray-700 dark:bg-opacity-75 px-4 bg-white bg-opacity-75" style="font-weight: 900">BEVAN</span>
+            </a>
+        </div>
+        <div class="block lg:hidden" style="margin-right: 25px;">
+            <button
+                class="flex items-center px-3 py-2 rounded border border-gray-600 active:border-black text-black dark:text-white" id="nav-toggle">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                </svg>
+            </button>
+        </div> 
+    </header>
+    <nav class="flex justify-between flex-wrap pl-6 lg:px-10 inter">
+        <div class="w-full block lg:flex-grow lg:items-center lg:justify-left lg:flex lg:w-auto lg:visible hidden lg:h-auto" id="nav-options">
+            <div class="text-base">
+                <a href="https://bphilip.uk/" class="button-blue mr-4">Home</a>
+                
+                <a href="https://bphilip.uk/blog/" class="button-blue mr-4">
+                    Blog
+                </a>
+                
+                <a href="https://bphilip.uk/projects/" class="button-blue mr-4">
+                    Projects
+                </a>
+                
+            </div>
+        </div>
+
+        <div class="w-full block lg:flex-grow lg:justify-end lg:flex lg:w-auto lg:visible hidden lg:h-auto" id="nav-options">
+            <div class="text-2xl">
+                
+                <a href="http://github.com/bevan-philip" class="button-teal mr-4" title="github">
+                    <span class="inline-svg" title="github"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/bevan-philip/" class="button-teal mr-4" title="linkedin">
+                    <span class="inline-svg" title="linkedin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. --><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+</span>
+                </a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="just-waves block mt-3 inter">
+        <div class="container mx-auto py-3 dark:bg-gray-700 dark:bg-opacity-75 px-4 bg-white bg-opacity-75">
+            
+    <h1 class="font-extrabold text-5xl mt-2 underline"> Kernel-level anti-cheats: a necessary devil </h1>
+
+        </div>
+    </div>
+    
+    
+    <nav aria-label="Breadcrumb" class="breadcrumb container mx-auto py-3 mt-2">
+        <ul>
+            <a href="/">
+                <li class="descriptor-clickable breadcrumb-element">Home</li>
+            </a>
+            <a href="/blog/">
+                <li class="descriptor-clickable breadcrumb-element">Blog</li>
+            </a>
+            <li class="descriptor">Kernel-level anti-cheats: a necessary devil </li>
+        </ul> 
+    </nav>
+    
+
+    <main class="w-screen flex-grow container mx-auto mt-3 mb-5">
+        
+  <div class="prose dark:prose-invert w-full min-w-[75%] gap-4 rounded shadow-md bg-gray-300 bg-opacity-25 dark:shadow-xl dark:bg-gray-700 dark:bg-opacity-50 p-5 min-h-0 mx-auto mt-4">
+    <p>Cheating is an increasingly endemic problem to multiplayer video games on PCs, and as a response, we&rsquo;ve seen the &ldquo;Cambrian explosion&rdquo; of anti-cheats designed to combat this situation.</p>
+<p>However, a vast majority of these products are choosing to run with the highest privileges possible on your system: the kernel-level. This choice has caused a lot of scrutiny from customers over the possible ramifications of this decision on their usage of their computer: particularly, over the privacy, security and stability of their PCs.</p>
+<p>Unfortunately, this discussion is messy, and has a lot of misinformation. This is an attempt to face this issue, from the perspective of a customer evaluating the option of installing these pieces of software.</p>
+<h2 id="the-lay-of-the-land">The lay of the land</h2>
+<p>A brief primer on what &ldquo;kernel-level&rdquo; means:</p>
+<ul>
+<li>Kernel-level: software running at the highest possible level on the machine, at the same level as your operating system.</li>
+<li>User-mode: software running at the regular level on your machine: take your browser, Discord, or most applications you run on a day-by-day basis.</li>
+</ul>
+<p>(There are multiple levels &ldquo;rings&rdquo; in the middle, but we&rsquo;re not going to go too in-depth here.)</p>
+<p>There are a lot of anti-cheat tools available right now. From generic technology providers, to bespoke solutions developed by studios, this table attempts to give an outline of the more known providers:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Developer</th>
+<th>Kernel-level?</th>
+<th>Generic provider</th>
+<th>Examples of games using it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vanguard</td>
+<td>Riot Games</td>
+<td>Yes</td>
+<td>No</td>
+<td>VALORANT, League of Legends</td>
+</tr>
+<tr>
+<td>BattleEye</td>
+<td>BattleEye</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Fortnite, Escape From Tarkov</td>
+</tr>
+<tr>
+<td>Easy Anti-Cheat</td>
+<td>Epic Games</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Fortnite, Apex Legends</td>
+</tr>
+<tr>
+<td>RICOCHET</td>
+<td>Activision Blizzard</td>
+<td>Yes</td>
+<td>No</td>
+<td>Call of Duty Modern Warfare II (2022)</td>
+</tr>
+<tr>
+<td>EA Anticheat</td>
+<td>Electronic Arts</td>
+<td>Yes</td>
+<td>No</td>
+<td>Battlefield 5, EA FC 24</td>
+</tr>
+<tr>
+<td>EQU8</td>
+<td>1047 Games</td>
+<td>Yes</td>
+<td>No <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></td>
+<td>Splitgate</td>
+</tr>
+<tr>
+<td>FACEIT AC</td>
+<td>FACEIT</td>
+<td>Yes</td>
+<td>Third-party</td>
+<td>Counter-Strike (FACEIT)</td>
+</tr>
+<tr>
+<td>EMAC LAB</td>
+<td>EMAC</td>
+<td>Yes</td>
+<td>Third-party</td>
+<td>Counter-Strike (GamersClub)</td>
+</tr>
+<tr>
+<td>Akros</td>
+<td>Akros</td>
+<td>Yes</td>
+<td>Third-party</td>
+<td>Counter-Strike (ChallengerMode)</td>
+</tr>
+<tr>
+<td>ESPORTAL AC<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+<td>ESPORTAL</td>
+<td>Yes</td>
+<td>Third-party</td>
+<td>Counter-Strike (ESPORTAL)</td>
+</tr>
+<tr>
+<td>XIGNCODE3</td>
+<td>Wellbia</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Black Desert</td>
+</tr>
+<tr>
+<td>PunkBuster</td>
+<td>PunkBuster</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Call of Duty 4: Modern Warfare, Battlefield 4</td>
+</tr>
+<tr>
+<td>GameGuard</td>
+<td>nProtect</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Helldivers 2</td>
+</tr>
+<tr>
+<td>Denuvo AC</td>
+<td>Denuvo</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>(Formerly DOOM Eternal)</td>
+</tr>
+<tr>
+<td>Valve Anti-Cheat (VAC)</td>
+<td>Valve Corporation</td>
+<td>No</td>
+<td>Yes</td>
+<td>Counter-Strike, generic Steam titles</td>
+</tr>
+<tr>
+<td>Warden</td>
+<td>Activision Blizzard</td>
+<td>No</td>
+<td>No</td>
+<td>World of Warcraft</td>
+</tr>
+<tr>
+<td>Defense Matrix</td>
+<td>Activision Blizzard</td>
+<td>No</td>
+<td>No</td>
+<td>Overwatch 2</td>
+</tr>
+<tr>
+<td>Arbiter</td>
+<td>343 Technologies</td>
+<td>No</td>
+<td>No</td>
+<td>Halo Infinite</td>
+</tr>
+<tr>
+<td>TenProtect</td>
+<td>Tencent</td>
+<td>Yes</td>
+<td>No</td>
+<td>Rings of Elysium</td>
+</tr>
+<tr>
+<td>mhyprot2</td>
+<td>miHoYo</td>
+<td>Yes</td>
+<td>No</td>
+<td>Genshin Impact</td>
+</tr>
+<tr>
+<td>Anti-Cheat Expert</td>
+<td>Tencent</td>
+<td>Yes (Probably)</td>
+<td>Yes</td>
+<td>League of Legends (China)</td>
+</tr>
+<tr>
+<td>FairFight</td>
+<td>i3d (formerly Gamebloks)</td>
+<td>No (server-side only)</td>
+<td>Yes</td>
+<td>Battlefield 4</td>
+</tr>
+<tr>
+<td>mail.ru AntiCheat Service</td>
+<td>mail.ru</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Conqueror&rsquo;s Blade</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Generic provider: they are not specific to one company or game, but are rather free to purchase for game developers.</li>
+<li>Third-party: an anti-cheat not bundled with the game, but rather applied on top of, or instead of the provided anti-cheat solution. For instance, Counter-Strike comes with VAC, but FACEIT disables it in favour of protecting it with their own anti-cheat solution.</li>
+</ul>
+<h2 id="the-privacy-impact-is-minimal">The privacy impact is minimal</h2>
+<p>A major focus of the kernel-level AC debate is the idea that escalating to the kernel would allow surreptitious extraction of user data, and with the ownership of some of these companies, potentially leave you vulnerable to manipulation, harm, and other ill wills.</p>
+<p>Strictly speaking, this is <em>true</em>.</p>
+<p>But&hellip; it&rsquo;s also true if you just install the game, without installing anything in the kernel.</p>
+<p>Without a kernel-level driver, or even administrative rights, software on your computer can:</p>
+<ul>
+<li>Steal browser cookies, allowing them to access the account sessions of anything logged in, <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+<li>Steal the tokens of most logged in applications: Steam, Discord, Teams, and Slack,</li>
+<li>Steal non-encrypted browser data: such as Auto-Fill information (if this includes your credit card information, they can make purchases<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>),</li>
+<li>Listen for keystrokes in non-privileged applications (that is, basically every application you use),</li>
+<li>Establish persistence, and background processes: enabling your computer to be part of a botnet,</li>
+<li>Read your clipboard,</li>
+<li>Mine cryptocurrency (<a href="https://play.esea.net/forums/492102">ESEA famously did this in 2013</a>, and it appears it was done without their kernel-level anti-cheat, as it was present in <code>eseaclient.exe</code>, the user-mode interface: either way, cryptocurrency does not require kernel-level permissions to mine, and <a href="https://www.theverge.com/2017/9/26/16367620/showtime-cpu-cryptocurrency-monero-coinhive">has been done entirely within the browser</a>),</li>
+<li>If a UAC exploit (like Fodhelper) exists on your Windows machine of choice, establish even further persistence,</li>
+<li>Steal all of your files, or encrypt them for ransom,</li>
+<li>Take a screenshot of your machine,</li>
+<li>Listen in on your microphone (modern versions of Windows should indicate to the user when this is happening),</li>
+<li>Watch your webcam surreptitiously (well-design webcams should at least give you a sign by making the indicator light tied to the same circuit as the webcam, meaning you can&rsquo;t have one without the other),</li>
+</ul>
+<p>This is unfortunately the nature of modern desktop operating systems: there are no safeguards to prevent applications without administrator access from reading data accessible to non-administrators. Mobile operating systems are designed differently, to prevent one app from reading anything other than the relevant data for the application to work.</p>
+<p>With a kernel-level driver, you gain these additional abilities,</p>
+<ul>
+<li>Establish persistence beyond the point anti-virus tooling can probe into,</li>
+<li>Disable anti-virus solutions (<a href="https://www.pcgamer.com/ransomware-abuses-genshin-impacts-kernel-mode-anti-cheat-to-bypass-antivirus-protection/">this actually happened: mhyprot2 had a vulnerability, that was abused by a threat actor</a> to disable popular AV software),</li>
+<li>The ability to do everything possible without kernel-level access, but more surreptitiously</li>
+</ul>
+<p>That is not a lot gained.</p>
+<p>If you do not trust the publisher of a game to protect the privacy of your computer, you should not install their software, full stop. Drawing the line at a kernel-level driver is arbitrary, and naïve.</p>
+<blockquote>
+<p>However, if your beef is only about data privacy at Riot, running the game client or running Vanguard makes not one bit of difference. Data can still be retrieved from user-mode, and we&rsquo;re all engineers for the same studio with the same goals, none of which are collecting your personal information. If Riot hasn&rsquo;t earned your trust, do not run our software.</p>
+<p><a href="https://www.leagueoflegends.com/en-us/news/dev/dev-vanguard-x-lol/">/dev: Vanguard x LoL</a></p>
+</blockquote>
+<p>The ability for kernel-level vendors to do mass data surveillance is also neutered by the fact that they know they are under constant vigilance by opponents: cheat developers. Cheat developers are constantly evaluating the state of kernel-level ACs, and are pouncing at the bit to discredit them to consumers, because it increases the likelihood for it to be removed.</p>
+<p>When cheat developers revealed that VAC was reading the DNS cache of systems (basically, seeing what websites your computer had visited), there was a mass outcry, forcing <a href="https://www.reddit.com/r/gaming/comments/1y70ej/valve_vac_and_trust/">Gabe Newell</a> to make a statement on reddit, clarifying the details around such a check.</p>
+<blockquote>
+<p>There is also a social engineering side to cheating, which is to attack people&rsquo;s trust in the system. If &ldquo;Valve is evil - look they are tracking all of the websites you visit&rdquo; is an idea that gets traction, then that is to the benefit of cheaters and cheat creators. VAC is inherently a scary looking piece of software, because it is trying to be obscure, it is going after code that is trying to attack it, and it is sneaky. For most cheat developers, social engineering might be a cheaper way to attack the system than continuing the code arms race, which means that there will be more Reddit posts trying to cast VAC in a sinister light.</p>
+<p>Gabe Newell, <a href="https://www.reddit.com/r/gaming/comments/1y70ej/valve_vac_and_trust/*">Valve, VAC, and trust : r/gaming</a></p>
+</blockquote>
+<h2 id="security">Security</h2>
+<p>As mentioned prior, there can be security-related issues.</p>
+<p>One potential risk is a supply chain attack. The concept is that someone could hack the vendor of an anti-cheat, and utilise that access to send out malicious software to customers. It&rsquo;s hard to quantify the real risk behind this prospect. This could happen to any piece of software on your machine, including the operating system you run, or common applications you use on a day-to-day basis. As discussed earlier, being the kernel does not give you substantially higher access to a machine.</p>
+<p>The other risk is the ability for a kernel-level driver to allow arbitrary applications to elevate themselves. This could be used by a piece of malware to elevate themselves to the kernel, and disable anti-virus solutions (which, as mentioned earlier, <a href="https://www.pcgamer.com/ransomware-abuses-genshin-impacts-kernel-mode-anti-cheat-to-bypass-antivirus-protection/">has already happened</a>).</p>
+<p><strong>There is a responsibility for game developers to design these tools with security as a core focus, beyond what is applicable to user-mode software.</strong> Whether game developers are up to the task is going to be something we&rsquo;re evaluating for a long time.</p>
+<p>That being said, user-mode security is important, too. And game developers have had failures here for far longer.</p>
+<h3 id="a-brief-section-about-attacks-done-with-user-mode-game-software">A brief section about attacks done with user-mode game software</h3>
+<p>In 2014, a worm spread through Garry&rsquo;s Mod. Known as the <a href="https://www.pcgamer.com/garrys-mod-cough-virus-is-cured-but-it-could-have-been-worse/">Cough Virus</a>, servers would infect users, who would have their Steam name changed, spam their friends and servers with a &ldquo;cough&rdquo; message, and attempt to hack other servers.</p>
+<p>In 2015, reddit user bsadams joined a Counter-Strike: Source server. The server exploited a Source engine exploit to gain remote-code execution (RCE) privileges on his computer. Using those privileges, <a href="https://www.reddit.com/r/GlobalOffensive/comments/3jpyhh/do_not_join_unkown_cs_source_servers_via_ip/">they proceeded to steal his Steam, ESEA and CEVO</a> accounts, stole his skins, and used his account to cheat. He only re-gained access due posting his story publicly.</p>
+<p>In 2023, Call of Duty: Modern Warfare 2 (2009) had to be taken down because an attacker was <a href="https://www.dexerto.com/tech/modern-warfare-2-virus-2229607/">abusing an RCE exploit in the game</a> (one of many) to propagate a worm. The exploit was reported to Activision <a href="https://techcrunch.com/2023/07/31/call-of-duty-worm-malware-used-to-hack-players-exploits-years-old-bug/">in 2018</a>.</p>
+<p>In 2024, the Apex Legends Global Series <a href="https://www.theverge.com/2024/3/18/24104666/apex-legends-postpones-algs-competition-hack-concerns">was put on hold</a> after multiple professional players were hacked live on air with an RCE vulnerability, and forced to play with cheats (contrary to some initial hypotheses, this had <em>nothing</em> to do with the kernel-level anti-cheat: it was a usermode vulnerability).</p>
+<p>In April 2021, researchers revealed that multiple RCE exploits were present in CS:GO, and remained unpatched despite having been reported to Valve months and years ago.</p>
+<ul>
+<li><a href="https://x.com/the_secret_club/status/1380868759129296900">Reported in 2019, patched in 2021</a></li>
+<li><a href="https://x.com/bienpnn/status/1381616325391384577">Reported in 2020, patched in 2021</a></li>
+<li><a href="https://x.com/chirun02/status/1383835641222340613">Reported in 2020, patched in 2021</a></li>
+<li><a href="https://x.com/teapotddd/status/1383145340988182530">Multiple vulnerabilities reported to Valve over the course of 2019-2021, patched in 2021</a>, including one that would allow people to replicate <a href="https://x.com/teapotddd/status/1383527700707479554">what happened to bsadams in 2015</a>.</li>
+<li>Reported in early 2021, patched <a href="https://x.com/the_secret_club/status/1380960120725733376">after April 2021</a>.</li>
+<li><a href="https://x.com/the_secret_club/status/1380966170522750979">Reportedn in December 2020, patched after April 2021</a>.</li>
+</ul>
+<p>To me, this is the real worry when we talk about security within video games. Game developers have a litany of failures to look back on, and there are countless examples of big names being lax.</p>
+<h2 id="stability">Stability</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/2024_CrowdStrike_incident">July 2024 Crowdstrike incident</a> shows just how wrong writing software in the kernel-level can go.</p>
+<p>To summarise the technical aspect: Crowdstrike delivered a bad upgrade to data used by their kernel-level driver, which revealed a bug. This bug caused machines to enter into a bootloop, which it could never<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> recover from without intervention. Resolving it required booting into safe mode, and manually deleting the driver update file.</p>
+<p>Incidents like that should never happen. Users should never have to boot into safe mode.</p>
+<p>This is not a problem if the driver does not start at boot. If a crash is caused by the user opening a piece of software, they can avoid the crash by not opening that piece of software, and the developer can put out a fix without much issue.</p>
+<p>But some anti-cheat vendors do start at boot. The most infamous is Vanguard. Now that they have chosen to do this, they must be aware of the great responsibility placed upon them.</p>
+<p>I have not minced words about how game developers have failed at securing their user-mode software. One only hopes that they take the stability of their kernel-level software more seriously.</p>
+<p><a href="https://www.leagueoflegends.com/en-gb/news/dev/dev-vanguard-x-lol/">An early version of Vanguard</a> disabled <strong>vulnerable</strong> (i.e. usable to cheat, or exploit your system) device drivers. However, these device drivers powered peripherals, leading to users finding out that features such as keyboard RGB, or game monitoring, suddenly became unusable. This didn&rsquo;t permanently brick any computers, but was an early warning of the risks.</p>
+<p>(While there are some reports around Vanguard bricking computers, they mostly appear to be inaccurate: see the post-script for further commentary about this).</p>
+<h2 id="where-do-we-go-from-here">Where do we go from here?</h2>
+<p>As much as kernel-level anti-cheat software might not be the devil it is portrayed to be, it is an expensive, and ultimately risky piece of software for game companies to develop and maintain. And given the requirement for these solutions to be game specific, practically every game developer on the planet is now creating new software to be installed at the kernel level. Some even install multiple, and randomize which one you use.</p>
+<p>This state of affairs is not sustainable, not by a long shot. Trust in these solutions is already low, and any vendor messing up risks permanent damage on the entire industry. Worse, developers are unlikely to want to keep pouring money forever into this state of affairs.</p>
+<p>To me (and I must stress: I am not within the anti-cheating space), we are doomed to have one, or a mix of the possible futures:</p>
+<ul>
+<li>We continue this path. Games become more and more expensive to maintain, and we risk a bad game developer mass bricking PCs,</li>
+<li>Game developers give up on PCs, and pivot to exclusively console, where the problems are far more limited<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>. With proper KB+M support, the problem of switching users over is a lesser hurdle,</li>
+<li>Microsoft takes on the mantle: utilizing their extreme control over the system, and new hardware-level attestation features, they create a mode for games that allow them to validate no malicious software has been injected in the game, and no malicious hardware component is reading the memory. On the one hand, <a href="https://secret.club/2021/06/28/windows11-tpms.html">this removes agency from the user</a>, over their own hardware. But it likely deals a massive blow to cheating within multiplayer titles.</li>
+<li>Microsoft, emboldened by the CrowdStrike disaster, takes steps to prevent any application from running within the kernel-level, instead choosing to provide that functionality via user-mode APIs, such as System Extensions on macOS, or eBPF on Linux. This changes the nature of the game, as neither the cheaters nor the defenders can elevate themselves to the kernel-level anymore.</li>
+</ul>
+<p>The third option seems likeliest, with an outside chance of it happening alongside option 4. Kernel-level anti-cheat providers are already enforcing similar requirements for usage of their software, and it makes sense that Microsoft will step it to streamline this process. For users, from a &ldquo;reduce the amount of crap on the system&rdquo; perspective, this is the best hope.</p>
+<blockquote>
+<p>Hopefully one day soon, the platforms our games run on will offer developers the security features required to prevent cheating without necessitating extracurricular software.</p>
+<p><a href="https://www.leagueoflegends.com/en-us/news/dev/dev-vanguard-x-lol/">/dev: Vanguard x LoL</a></p>
+</blockquote>
+<p>There is already some optimism here: Microsoft have begun conversations with security partners (who are the biggest hindrance to removing user code from the kernel) about moving code out of the kernel, and <a href="https://x.com/ItsGamerDoc/status/1816815420206194858">along with security features like VBS Enclaves</a>, present a pathway out.</p>
+<p>It is a sad state of things where developers must invest so much effort into providing a playable multiplayer experience. But we cannot do much but live with the state of things, as they are.</p>
+<h2 id="further-reading">Further reading</h2>
+<ul>
+<li><a href="https://secret.club/2020/04/17/kernel-anticheats.html">Why anti-cheat software utilize kernel drivers | secret club</a>
+<ul>
+<li>Side note: secret.club is an excellent resource for anyone interested in the technical innards of cheats, and anti-cheat solutions.</li>
+</ul>
+</li>
+<li><a href="https://secret.club/2020/04/28/anticheat_blocking_overclocking_tools.html">Why anti-cheats block overclocking tools | secret club</a></li>
+<li><a href="https://www.pushtotalk.gg/p/the-gamers-do-not-understand-anti-cheat">The Gamers Do Not Understand Anti-Cheat - by Ryan K. Rigney</a></li>
+<li><a href="https://www.leagueoflegends.com/en-us/news/dev/dev-vanguard-x-lol/">/dev: Vanguard x LoL - League of Legends</a></li>
+<li><a href="https://www.leagueoflegends.com/en-us/news/dev/dev-null-anti-cheat-kernel-driver/">/dev/null: Anti-Cheat Kernel Driver - League of Legends</a></li>
+<li><a href="https://archive.is/JoWAl">Gaffer on Games | Never Trust the Client</a></li>
+<li><a href="https://www.reddit.com/r/Diabotical/comments/cqtewi/equ8_anticheat_findings/">EQU8 anti-cheat findings : r/Diabotical</a> (as mentioned in the footnotes, EQU8 is no longer the technical solution for Diabotical following their acquisition by 1047 Games)</li>
+<li><a href="https://www.xda-developers.com/dma-ai-riot-interview/">DMA and AI are the next frontier of online cheating, but Riot has a plan</a></li>
+<li><a href="https://x.com/RiotBrightmoon/status/1743311702652014778">Riot&rsquo;s position on macOS</a></li>
+</ul>
+<h2 id="post-script">Post-script</h2>
+<h3 id="what-about-linux-and-mac">What about Linux and Mac?</h3>
+<p>As sad as it is, the userbase is not significantly high enough for companies to invest into these platforms (yes, this is a chicken and egg problem). It is likely the cost for developing on Windows alone is exorbitantly high. The lay of the land will continue until developers have sufficient reason to change what they&rsquo;re doing.</p>
+<p>The other problem is the inherent difficulty of protecting Linux.</p>
+<blockquote>
+<p>It&rsquo;s the same thing when we&rsquo;re talking about why we can&rsquo;t support Linux. The distributions have become bespoke and so freely customizable, we have no real viable way to attest to the security of its kernel. The whole operating system itself could be the cheat. (2/4)</p>
+<p><a href="https://x.com/deteccphilippe/status/1778586679001108869">Phillip Koskinas, head of Riot Vanguard</a></p>
+</blockquote>
+<h3 id="the-reports-around-vanguard-bricking-computers-appear-to-inaccurate-as-of-writing">The reports around Vanguard bricking computers appear to inaccurate, as of writing</h3>
+<p>Riot have denied them, and the symptoms do not appear consistent with a kernel-level driver failure (as we have so aptly seen with Crowdstrike).</p>
+<p>What appears to have happened is the following:</p>
+<ul>
+<li>Vanguard requires specific hardware features to enabled on computers. These settings are required to protect game integrity,</li>
+<li>When users were informed that they did not have these settings enabled, many enabled them, without reading the appropriate documentation,</li>
+<li>What that documentation would have revealed is that their computer may not support those features being enabled.</li>
+</ul>
+<p>To call this Riot&rsquo;s fault is a bit much, and takes away agency from the people using the computer. Riot did not automatically turn them on.</p>
+<p>Riot are allowed to require those features.</p>
+<p>This may have been a lapse in user communication, and Riot should attempt to document this in a clearer fashion to avoid users falling into this trap.</p>
+<p><a href="https://www.reddit.com/r/ValorantTechSupport/comments/wqcc93/valorant_turning_off_internet_every_time_it_opens/">There is a potential issue with Vanguard improperly interfering with WiFi drivers</a>, based on user reporting. While this does not brick computers, it does prevent normal operating.</p>
+<h3 id="lets-bring-back-server-communities-of-old">Let&rsquo;s bring back server communities of old</h3>
+<p>A common retort is that we should abandon modern matchmaking solutions, and instead rely upon people to operate servers, who can then manually ban cheaters.</p>
+<p>While I agree that all modern titles should offer options for users to host their own servers, I do not believe this to be a viable defence strategy.</p>
+<p>For one, server admins (and other players) are not fantastic judges of whether people are cheating. Take this <a href="https://www.youtube.com/watch?v=zP5OLmL0hBE">2009 clip of 3kliksphilip</a> being banned from a CSS server for&hellip; well, to be blunt, incredibly mediocre gameplay by modern standards. This is during the heyday of community servers, so I do not find it convincing that things would be better today.</p>
+<p>Quite frankly, I <em>was</em> that server admin at points. So, from experience, I understand how problematic making decisions on players is. Unless the cheater is obvious, leaving judgements to other humans leads to problems.</p>
+<p>High-level cheaters present an even more impossible challenge. When you know how to disguise your cheating effectively, or limit your cheating to information only, you become extremely difficult to ban.</p>
+<h3 id="sue-them-all-to-death">Sue them all to death?</h3>
+<p>Game developers do occasionally take legal action against cheat developers. Could they scale this up to fight them?</p>
+<p>Alas, this is hardly sustainable. For one, lawsuits are expensive, and it is unclear whether game developers will ever recoup the money. They&rsquo;re slow, meaning competitors will have ample time to step in, and users plenty of opportunity to transition.</p>
+<p>The biggest problem, like with ransomware operators, is that many operate outside of areas where game developers can enact legal action. It&rsquo;s basically worthless to try and fight anyone based out of Russia.</p>
+<h3 id="hardware-cheats-make-this-all-moot-no">Hardware cheats make this all moot, no?</h3>
+<p>Cheats have escalated to the point where they are components, installable into your computer, that read the memory of your computer to get you your cheats. But both <a href="https://blog.faceit.com/developer-blog-new-updates-on-faceit-anti-cheat-aa7a47cc90da">FACEIT</a>, and Vanguard claim the ability to detect them. So, already, hardware cheats are not impervious to anti-cheat providers.</p>
+<p>But critically: forcing cheats to run within this environment increases the barrier for users to cheat. You need to purchase a hardware component, and tamper with your PC to install it. This raises the costs, and the effort required, and forces users away from this.</p>
+<h3 id="server-side-measures">Server-side measures</h3>
+<p>A logical solution to reduce the efficacy of information cheats is to reduce the amount of information sent to game clients. For instance, you only need to send the location of an enemy player right as you are about to see him.</p>
+<p>The reality is that this is a rather old idea, and has been implemented by many games: see <a href="https://technology.riotgames.com/news/demolishing-wallhacks-valorants-fog-war">Riot&rsquo;s article for their VALORANT implementation</a>. CS:GO implemented this same idea in 2015, although a cursory glance seems to reveal that this stopped working with the release of CS2. Examples of the community anti-cheat <a href="https://www.youtube.com/watch?v=qkhQgYB4lAA">SMAC</a> implementing it can be seen as far back as 2012 (although SMAC&rsquo;s implementation/FACEIT&rsquo;s config of SMAC was too aggressive, leading to pop-in scenarios when peeking corners).</p>
+<p>Does it work? Yes? Does it solve the problem entirely? No, dear god, no.</p>
+<p>Beyond that, most game developers have already elected not to trust the client for information, which prevents clients from saying &ldquo;I have infinite health&rdquo;, and the server going &ldquo;OK, that seems legitimate&rdquo;. Of course, in peer-to-peer titles where a user is the server, you can bypass that by forcibly making yourself the host, and then you are the server validating this information - hence why, after a period of P2P titles, games have reverted to servers hosted by the developer.</p>
+<h3 id="ai-anti-cheat">AI anti-cheat?</h3>
+<p>In the spirit of moving things away from the client, some technology providers are exploring using artificial intelligence to automatically detect cheats from user behaviour.</p>
+<p>Valve are the most famous example, deploying a solution called &ldquo;VACNet&rdquo; to detect suspicious behaviour, and sending them to the manual review service &ldquo;Overwatch&rdquo;, for players to judge.</p>
+<p>Whether or not this is working is difficult to tell. For one, after the launch of CS2, Valve appears to have temporarily disabled the solution when it was <a href="https://www.youtube.com/watch?v=fiGarzzt9dQ&amp;t=0s">accidentally banning players for spinning their mouse too fast</a>. It appears to have been brought back online since.</p>
+<p>It also does not ban informational cheats (i.e. wallhacks, ESPs, radar hacks).</p>
+<p>Riot seem skeptical of the efficacy of AI anti-cheats for detecting aimbots.</p>
+<blockquote>
+<p>And even solely for aimbots, recall just isn&rsquo;t that great. The best models can only identify around 30-50% of cheats on server-sided player input alone, and this is not sufficient for a free competitive game with literally no barriers to reentry. Worse, aimbot developers have already started offering &ldquo;humanization&rdquo; features to prevent player reports, and while they&rsquo;re still mostly goofy pseudo-random noise generators, at some point, a particularly enterprising young cheater will spend the weekend training a model to &ldquo;move the mouse like it&rsquo;s a real boy.&rdquo;</p>
+<p><a href="https://www.leagueoflegends.com/en-gb/news/dev/dev-vanguard-x-lol/">/dev: Vanguard x LoL</a></p>
+</blockquote>
+<h3 id="ai-behaviour-grouping">AI behaviour grouping?</h3>
+<p>Valve also have another ace up their sleeves. Using AI, they attempt to rank Steam accounts by the likelihood of them cheating. Data points such as their interactions on Steam, behaviour within the game, and whether they are running CS2 in &ldquo;Trusted Mode&rdquo;, inform an AI classifier to group you. You are then only matchmaked with players within the same group.</p>
+<p>Within CS:GO, I would rate this system as having worked <strong>for me</strong>. Within CS2, the system was not working for me, or my trust ranking unexpectedly dropped (very little transparency to the user on this).</p>
+<p>Critically, it&rsquo;s difficult to evaluate the system, because it will be different for each user. How will the experience be for a new, but legitimate user? There won&rsquo;t be many data points for them, so will it automatically put them in the low trust tier, forcing them to play with cheaters? <a href="https://www.reddit.com/r/GlobalOffensive/comments/11w0cl4/csgo_for_new_players_is_a_hellish_experience/">At least one user has reported this as an issue</a>.</p>
+<h3 id="wait-how-many-third-party-anti-cheats-exist-for-cs">Wait, how many third-party anti-cheats exist for CS?</h3>
+<p>As you may have seen in the table, there are at least 4 different providers for external anti-cheats for Counter-Strike. <a href="https://www.reddit.com/r/Steam/comments/3kehge/is_it_just_me_or_does_easyanticheat_esports_seem/">Easy Anti-Cheat</a> used to provide esport services for Counter-Strike too.</p>
+<p>ESL had an anti-cheat, but shut it down in 2021. For all intents and purposes, the anti-cheat was dead in 2015, when ESL acquired ESEA, who had a more renowned anti-cheat. ESEA&rsquo;s anti-cheat would too be subsumed when ESL merged with FACEIT.</p>
+<p>CEVO, a now defunct competitor to ESEA/FACEIT, had their own anti-cheat.</p>
+<p>To put it simply, the community has universally decided that the default anti-cheat solution provided with Counter-Strike is not sufficient enough for high-level gameplay (and especially tournament gameplay), and as such has created an entire ecosystem of competitors to try and defend the game.</p>
+<p>The most damning confirmation of the above claim is that qualifiers for Valve events have to be ran with a proprietary, third-party anti-cheat. A cause of controversy during the qualifiers for the PGL Copenhagen Major 2024 was that the third-party AC, Akros, was not good enough. The vendor, for their part, responded in a now deleted Twitter post, claiming <a href="https://web.archive.org/web/20240111205526/https://twitter.com/AkrosAC/status/1745506435662782890">cheating is out of control</a>.</p>
+<h3 id="game-developers-would-love-to-not-make-kernel-level-anti-cheats">Game developers would love to not make kernel-level anti cheats</h3>
+<p>A general point: making kernel-level anti-cheats is an absolutely insane proposition for a company to take on, without there being the need to do so.</p>
+<ul>
+<li>The additional scrutiny from customers is unwanted,</li>
+<li>The requirement to hire capable developers of building these systems safely,</li>
+<li>The potential blowback if the system does fall over,</li>
+<li>The monetary impact of trying to deal with the above problems.</li>
+</ul>
+<p>I do not see why a company would willingly take this on, without feeling that their products are genuinely at risk without a capable anti-cheat.</p>
+<h2 id="footnotes">Footnotes</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Used to be a generic technology provider, but was acquired by 1047 Games for exclusive use in first-party titles.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>During the writing of this piece, ESPORTAL declared bankruptcy.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Banks (at least within the UK) are typically wise to these sorts of attacks: session times are extremely short, and transactions likely require confirmation on your phone, with some form of verification. Some UK challenger banks don&rsquo;t even provide websites. The end result is that stealing your bank session, while bad, is not catastrophic.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Caveat: more and more websites require confirmation for card purchases, on a second-factor.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Never is not strictly true: it was reported that <a href="https://www.theverge.com/2024/7/19/24201927/microsoft-crowdstrike-update-fix-turn-off-on-pc">roughly 15 reboots</a> of a computer could resolve the issue. Each reboot would download a little bit more of the update to solve the issue (I think).&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>There are no active exploits for the latest version of game consoles, and the few hardware exploits, such as XIM, are expensive, and a far smaller attack surface to detect.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    
+  <div class="mb-4">
+      <span class="align-fa">
+        <span class="inline-svg" title="tag-solid"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="currentColor" opacity="1" fill="#1E3050" d="M0 80V229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7H48C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>
+</span>
+      </span>
+        <a href="/tags/security/"><span class="descriptor-clickable"> security</span></a>
+        <a href="/tags/video-games/"><span class="descriptor-clickable"> video games</span></a>
+  </div>
+
+  </div>
+
+    </main>
+  
+    <footer class="container mx-auto mt-3 mb-5">
+    <p>Copyright Bevan Philip. All rights reserved. See <a href="/credits" class="link-style">Credits</a> for a list of credits.</p>
+
+  </footer>
+</body>
+</html>
